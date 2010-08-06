@@ -62,9 +62,9 @@ module Capybara
       #
       # @param [String] locator           Which radio button to choose
       #
-      def choose(locator)
+      def choose(locator, options={})
         msg = "cannot choose field, no radio button with id, name, or label '#{locator}' found"
-        find(:xpath, XPath.radio_button(locator), :message => msg).set(true)
+        find(:xpath, XPath.radio_button(locator, options), :message => msg).set(true)
       end
 
       ##
@@ -76,9 +76,9 @@ module Capybara
       #
       # @param [String] locator           Which check box to check
       #
-      def check(locator)
+      def check(locator, options={})
         msg = "cannot check field, no checkbox with id, name, or label '#{locator}' found"
-        find(:xpath, XPath.checkbox(locator), :message => msg).set(true)
+        find(:xpath, XPath.checkbox(locator, options), :message => msg).set(true)
       end
 
       ##
@@ -90,9 +90,9 @@ module Capybara
       #
       # @param [String] locator           Which check box to uncheck
       #
-      def uncheck(locator)
+      def uncheck(locator, options={})
         msg = "cannot uncheck field, no checkbox with id, name, or label '#{locator}' found"
-        find(:xpath, XPath.checkbox(locator), :message => msg).set(false)
+        find(:xpath, XPath.checkbox(locator, options), :message => msg).set(false)
       end
 
       ##
